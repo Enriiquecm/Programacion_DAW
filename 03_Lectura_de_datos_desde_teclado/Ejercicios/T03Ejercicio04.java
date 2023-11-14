@@ -3,7 +3,6 @@
  * 
  * @author Enrique Capote
  */
-package Ejercicios;
 
 import java.util.Scanner;
 

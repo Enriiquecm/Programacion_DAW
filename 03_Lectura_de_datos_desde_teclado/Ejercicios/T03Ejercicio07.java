@@ -1,4 +1,8 @@
-package Ejercicios;
+/**
+ * Explica tu código aquí
+ * 
+ * @author Enrique Capote
+ */
 
 import java.util.Scanner;
 

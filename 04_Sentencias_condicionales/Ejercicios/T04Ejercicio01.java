@@ -19,7 +19,7 @@ public class T04Ejercicio01 {
         System.out.println("Los martes a primera tienes PROG");
         break;
       case 3:
-        System.out.println("Los miercoles a primera tienes SI");
+        System.out.println("Los miércoles a primera tienes SI");
         break;
       case 4:
         System.out.println("Los jueves a primera tienes EEDD");

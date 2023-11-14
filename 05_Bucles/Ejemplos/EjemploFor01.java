@@ -4,9 +4,11 @@
  * @author Enrique Capote
  */
 
-public class T03Ejercicio10 {
+public class EjemploFor01 {
   public static void main(String[] args) {
-    
+    for (int i = 1; i <= 10; i++) {
+      System.out.println(i);
+    }
   }
   
 }

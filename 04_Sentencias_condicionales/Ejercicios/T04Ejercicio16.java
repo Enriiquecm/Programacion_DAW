@@ -4,9 +4,8 @@
  * @author Enrique Capote
  */
 
-public class T03Ejercicio10 {
+public class T04Ejercicio16 {
   public static void main(String[] args) {
     
   }
-  
 }

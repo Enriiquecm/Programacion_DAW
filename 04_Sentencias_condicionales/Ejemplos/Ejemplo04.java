@@ -8,8 +8,7 @@ public class Ejemplo04 {
     edad = sc.nextInt();
     if (edad <18) {
       System.out.println("Eres menor de edad");
-    } else {
-      if ((edad > 18) && (edad < 64)) {
+    } else if ((edad > 18) && (edad < 64)) {
         System.out.println("Eres mayor de edad");
         
       } else {
@@ -17,7 +16,7 @@ public class Ejemplo04 {
         
       }
       
-    }
+    
       sc.close();
     }
     
