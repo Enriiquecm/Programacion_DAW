@@ -17,7 +17,12 @@ public class T05Ejercicio09 {
       n /= 10 ;
       i++; 
     }
-    System.out.printf("El numero %2d tiene %2d cifras", n ,i );
+    if (i==1) {
+      System.out.printf("El numero %2d tiene %2d cifra", n ,i );
+    } else {
+      System.out.printf("El numero %2d tiene %2d cifras", n ,i );
+    }
+    
     sc.close();
   }
 }
