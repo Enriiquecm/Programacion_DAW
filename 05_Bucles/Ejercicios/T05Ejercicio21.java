@@ -19,10 +19,8 @@ public class T05Ejercicio21 {
     while (num >= 0) {
       System.out.print("Introduce numero: ");
       num = sc.nextDouble();
-      if (num > 0) {
         suma += num;
         i++;
-      }
     }
     double media = suma / i;
     sc.close();

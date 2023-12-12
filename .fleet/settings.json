@@ -1,4 +1,7 @@
 {
-    "run.destination.stop.already.running": "Never",
-    "java.debugger.reloadClassesAfterCompilation": "Never"
+    "run.destination.stop.already.running": "Ask",
+    "java.debugger.reloadClassesAfterCompilation": "Ask",
+    "editor.guides": [
+        
+    ]
 }
