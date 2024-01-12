@@ -103,45 +103,4 @@ public class Varias {
       return (x == sumaDivisores(y) && y == sumaDivisores(x));
       
     }
-
-    public static double potencia (double base , double exp){
-      double pot = Math.pow(base, exp);
-      return pot;
-    }
-
-    public static int digitoN (int digito , int posicion){
-      int digitoPosicion = 0;
-      for (int i = 0; i < posicion; i++) {
-        
-      }
-    }
-    public static int quitaPorDetras (int n , int cant){
-      for (int i = 0; i < cant; i++) {
-        n /= 10;
-        return n;
-      }
-    }
-    public static int quitaPorDelante (int n , int cant){
-      for (int i = 0; i < cant; i++) {
-        n %= 10;
-        return n;
-      }
-    }
-    public static int pegaPorDetras (int n , int digito){
-      n = n * 10 + digito;
-      return n;
-    }
-    public static int pegaPorDelante (int n , int digito){
-      for (int i = 0; i < (digitos(n) + 1); i++) {
-        n *= 10;
-      }
-      return n + digito;
-    }
-    public static int juntaNumeros (int n1 , int n2){
-      for (int i = 0; i < (digitos(n2) + 1); i++) {
-        n1 *= 10;
-      }
-      return n1 + n2;
-    }
-
 }

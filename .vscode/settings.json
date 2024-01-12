@@ -1,13 +1,15 @@
 {
   "java.project.sourcePaths": [
+    "07_Arrays/Ejemplos",
+    "05_Bucles/Ejercicios",
+    "05_Bucles/Ejemplos",
+    "05_Bucles",
     "04_Sentencias_condicionales/Ejercicios",
     "04_Sentencias_condicionales/Ejemplos",
     "04_Sentencias_condicionales",
     "03_Lectura_de_datos_desde_teclado/Ejercicios",
     "03_Lectura_de_datos_desde_teclado",
     "01_Salida_de_datos_por_pantalla/Ejemplos",
-    "05_Bucles",
-    "05_Bucles/Ejemplos",
-    "05_Bucles/Ejercicios"
+    "07_Arrays/Ejercicios"
   ]
 }
