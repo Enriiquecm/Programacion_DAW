@@ -1,5 +1,6 @@
 {
   "java.project.sourcePaths": [
+    "07_Arrays/Ejercicios",
     "07_Arrays/Ejemplos",
     "05_Bucles/Ejercicios",
     "05_Bucles/Ejemplos",
@@ -10,6 +11,7 @@
     "03_Lectura_de_datos_desde_teclado/Ejercicios",
     "03_Lectura_de_datos_desde_teclado",
     "01_Salida_de_datos_por_pantalla/Ejemplos",
-    "07_Arrays/Ejercicios"
-  ]
+    "06_Numeros_Aleatorios/Ejemplos"
+  ],
+  "java.debug.settings.onBuildFailureProceed": true
 }

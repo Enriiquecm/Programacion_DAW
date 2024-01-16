@@ -1,5 +1,5 @@
-public class T07Ejercicio03_bidim {
-  public static void main(String[] args) {
+public class T07Ejercicio04_bidim {
+  public static void main(String[] args) throws InterruptedException {
     int [][] tabla = new int [4][5];
     int fila;
     int columna;
@@ -24,6 +24,7 @@ public class T07Ejercicio03_bidim {
         sumaFila += tabla[fila][columna];
       }
       System.out.printf("|%8d\n", sumaFila);
+      Thread.sleep(1000);
     }
 
     for ( columna = 0; columna < 40; columna++) {
@@ -33,14 +34,15 @@ public class T07Ejercicio03_bidim {
 
     int sumaColumna= 0;
     int sumaTotal = 0;
-    for (fila = 0; fila < tabla[0].length -1; fila++) {
+    for (columna = 0; columna < tabla[0].length ; columna++) {
       sumaColumna = 0;
-      for ( columna = 0; columna < tabla.length; columna++) {
+      for ( fila = 0; fila < tabla.length; fila++) {
         sumaColumna += tabla[fila][columna];
       }
       sumaTotal += sumaColumna;
       System.out.printf("%8d", sumaColumna);
+      Thread.sleep(1000);
     }
-    System.out.printf("%8d", sumaTotal);
+    System.out.printf("|%8d", sumaTotal);
   }
 }
