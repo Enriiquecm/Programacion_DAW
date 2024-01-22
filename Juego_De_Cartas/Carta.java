@@ -9,7 +9,7 @@ public class Carta {
   String palo;
   
 
-  ////Constructor
+  //Constructor
   public Carta(int valor, double puntuacion, String palo) {
     this.valor = valor;
     this.puntuacion = puntuacion;
@@ -17,7 +17,9 @@ public class Carta {
   }
   
 
-  ////Funciones
+  ////Métodos
+
+  
 
   
 }
