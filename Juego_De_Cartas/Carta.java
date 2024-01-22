@@ -4,20 +4,20 @@
 public class Carta {
   
   ////Atributos
-  double valor;
-  int numero;
+  double puntuacion;
+  int valor;
   String palo;
   
 
   ////Constructor
-  public Carta(double valor, int numero, String palo) {
+  public Carta(int valor, double puntuacion, String palo) {
     this.valor = valor;
-    this.numero = numero;
+    this.puntuacion = puntuacion;
     this.palo = palo;
   }
   
 
   ////Funciones
 
-  public void 
+  
 }
