@@ -1,8 +1,5 @@
 public class Baraja {
-  // public void iniciaBaraja() {
-    
-    
-  //}
+
   public static void main(String[] args) {
     // Inicializamos array de cartas
    Carta[] cartas = new Carta[40];
@@ -26,8 +23,6 @@ public class Baraja {
     for (int i = 0; i < paloCarta.length; i++) {
       for (int j = 0; j < valorCarta.length; j++) {
         
-
-
         ////Asignamos la puntuacion a cada valor de carta( no importa del palo que sea)
         switch (valorCarta[j]) {
           case 1,2,3,4,5,6,7:
@@ -47,7 +42,12 @@ public class Baraja {
     }
 
     for (int i = 0; i < cartas.length; i++) {
-      System.out.println(cartas[i].valor + " "+ cartas[i].palo + " "+ cartas[i].puntuacion);
+      System.out.printf(" _______\n");
+      System.out.printf("|       |\n");
+      System.out.printf("|   %2d  |\n", cartas[i].valor);
+      System.out.printf("|   %s   |\n", cartas[i].palo.charAt(0)); // Cogemos la primera letra del palo
+      System.out.printf("|_______|\n");
+      System.out.println();
     }
 
   }
