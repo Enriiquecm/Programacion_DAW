@@ -3,5 +3,6 @@
     ".",
     "Ejemplos",
     "Ejercicios"
-  ]
+  ],
+  "java.debug.settings.onBuildFailureProceed": true
 }

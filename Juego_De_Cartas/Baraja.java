@@ -1,55 +1,54 @@
+
 public class Baraja {
 
-  public static void main(String[] args) {
-    // Inicializamos array de cartas
-   Carta[] cartas = new Carta[40];
 
-    //// Iniciamos un array con los posibles valores de las cartas
-    //// para poder asignarlos posteriormente con bucles
-    int [] valorCarta = {1,2,3,4,5,6,7,10,11,12};
 
-    ////Array de puntuación
-    double [] puntuacion = new double[10];
+  ////Atributos
+  private String[] palo = {"Oros", "Bastos" , "Espadas" , "Copas"};
+  private String[] valor = {"1","2","3","4","5","6","7","Sota","Caballo","Rey"};
+  private Carta[] cartas;
+  private int numCartas;
+  private double[] puntuacion = {1.0 , 2.0 , 3.0 , 4.0 , 5.0 , 6.0 , 7.0 , 0.5 , 0.5 , 0.5};
 
-    //// Iniciamos un array con los palos de las cartas
-    String[] paloCarta = new String[4];
-    paloCarta[0] = "oros";
-    paloCarta[1] = "bastos";
-    paloCarta[2] = "espadas";
-    paloCarta[3] = "copas";
-
-    //// Rellenamos el array de cartas
-    int j2= 0;
-    for (int i = 0; i < paloCarta.length; i++) {
-      for (int j = 0; j < valorCarta.length; j++) {
-        
-        ////Asignamos la puntuacion a cada valor de carta( no importa del palo que sea)
-        switch (valorCarta[j]) {
-          case 1,2,3,4,5,6,7:
-          puntuacion[j] = valorCarta[j];
-            break;
-          
-          case 10,11,12:
-          puntuacion[j] = 0.5;
-          break;
-        }
-
-        ////Construimos cada carta
-        cartas[j2] = new Carta(valorCarta[j], puntuacion [j], paloCarta[i]);
-        j2++;
-
-      }
-    }
-
-    for (int i = 0; i < cartas.length; i++) {
-      System.out.printf(" _______\n");
-      System.out.printf("|       |\n");
-      System.out.printf("|   %2d  |\n", cartas[i].valor);
-      System.out.printf("|   %s   |\n", cartas[i].palo.charAt(0)); // Cogemos la primera letra del palo
-      System.out.printf("|_______|\n");
-      System.out.println();
-    }
-
+  ////Constructor
+  public Baraja(){
+    numCartas = this.palo.length * this.valor.length;
+    cartas = new Carta[numCartas];
+    iniciaBaraja();
+    //mostrarBaraja();
   }
 
+  ////Métodos
+ 
+  public void iniciaBaraja() {
+    int k = 0;
+    for (int i = 0; i < palo.length; i++) {
+      for (int j = 0; j < valor.length; j++) {
+
+        ////Construimos cada carta
+        cartas[k] = new Carta(puntuacion[j] , valor[j] , palo[i]);
+        k++;
+      }
+    }
+  }
+
+  public void mostrarBaraja(){
+    for (int i = 0; i < numCartas; i++) {
+      System.out.println(cartas[i].toString());
+    }
+  }
+
+  public void mezclarBaraja(){
+    
+    for (int i = 0; i < numCartas; i++) {
+      int aux = (int)(Math.random()*40);
+      Carta temp = cartas[i];
+      cartas[i] = cartas[aux];
+      cartas[aux] = temp; 
+    }
+}
+  public Carta[] getCartas() {
+    return cartas;
+  }
+  
 }

@@ -11,15 +11,15 @@ public class PruebaLibro {
     Libro quijote = new Libro();
 
 
-    lib.titulo = "Gerónimo Stilton";
-    lib.autor = "Mark Zuckerberg";
-    lib.nPaginas = 234;
+  //   lib.titulo = "Gerónimo Stilton";
+  //   lib.autor = "Mark Zuckerberg";
+  //   lib.nPaginas = 234;
 
-    System.out.println();
-    System.out.println("Título: " + lib.titulo);
-    System.out.println("Autor: " + lib.autor);
-    System.out.println("Nº páginas: " + lib.nPaginas);
-    System.out.println("Edición: " + lib.nEdicion);
+  //   System.out.println();
+  //   System.out.println("Título: " + lib.titulo);
+  //   System.out.println("Autor: " + lib.autor);
+  //   System.out.println("Nº páginas: " + lib.nPaginas);
+  //   System.out.println("Edición: " + lib.nEdicion);
 
-  }
+}
 }
