@@ -46,7 +46,7 @@ public class Quiniela {
     return apuesta;
   }
   ////Método para comparar la quiniela apostada con la ganadora
-  public static void comparaApuesta(int[][] apuesta , int[][] ganadora){
+  public static void comparaApuesta(int[][] apuesta , int[][] ganadora , int[] pleno1, int[] pleno2){
     int puntos = 0;
     for (int j = 0; j < apuesta[0].length; j++) {
       for (int i = 0; i < apuesta.length; i++) {
@@ -56,6 +56,11 @@ public class Quiniela {
       }
       if (puntos >= 10) {
         System.out.println("Enhorabuena la quiniela numero "+ (j+1) + " ha sido premiada usted ha acertado "+ (puntos) + " partidos ");
+        if (pleno1 == pleno2) {
+          System.out.println("Además ha acertado el pleno al 15");
+        } else {
+          System.out.println("Pero usted no ha acertado el pleno al 15");
+        }
       } else {
         System.out.println("Lo sentimos la quiniela numero "+ (j+1) + " no ha sido premiada, usted ha acertado "+ (puntos) + " partidos ");
       }
@@ -93,106 +98,83 @@ public class Quiniela {
     
   }
   ////Método para crear el pleno al quince aleatorio
-  public static void plenoAlQuinceAle(){
-    int resultadoLocal;
-    int resultadoVisitante;
 
-    resultadoLocal = (int)(Math.random()*3);
-    resultadoVisitante = (int)(Math.random()*3);
 
-    switch (resultadoLocal) {
-      case 0:
-        System.out.print("15. \t| Local " + resultadoLocal);
-        break;
-      case 1:
-        System.out.print("15. \t| Local " + resultadoLocal);
-        break;
-      case 2:
-        System.out.print("15. \t| Local " + resultadoLocal);
-        break;
-      case 3:
-        System.out.print("15. \t| Local M" );
-        break;
+  public static int[] plenoAlQuinceAle(){
+    int resultadoLocal = (int)(Math.random()*4); // Se incrementa el rango para incluir "M" como opción
+    int resultadoVisitante = (int)(Math.random()*4); // Se incrementa el rango para incluir "M" como opción
+
+    int[] resultado = {resultadoLocal, resultadoVisitante};
     
-      default:
-        break;
-  }
-
-  switch (resultadoVisitante) {
-    case 0:
-      System.out.print(" Visitante " + resultadoVisitante);
-      break;
-    case 1:
-      System.out.print(" Visitante " + resultadoVisitante);
-      break;
-    case 2:
-      System.out.print(" Visitante " + resultadoVisitante);
-      break;
-    case 3:
-      System.out.print(" Visitante M" );
-      break;
-  
-    default:
-      break;
-}
-  }
-  ////Método para crear el pleno al quince manual
-  public static void plenoAlQuinceManual(){
-    int resultadoLocal;
-    int resultadoVisitante;
-    System.out.println("Introdice el resultado del partido a pleno: ");
-    System.out.println("0 para 0 goles, 1 para 1 gol , 2 para 2 goles y 3 para mas de 2 goles");
-
-    do {
-
-      System.out.print("Introduce el resultado del equipo local: ");
-      resultadoLocal = Integer.parseInt(System.console().readLine());
-    } while (resultadoLocal <0 || resultadoLocal>3);
-
-
-    do {
-
-    System.out.print("Introduce el resultado del equipo visitante: ");
-      resultadoVisitante = Integer.parseInt(System.console().readLine());
-    } while (resultadoVisitante < 0 || resultadoVisitante > 3);
-
     switch (resultadoLocal) {
-      case 0:
-        System.out.print("15. \t| Local " + resultadoLocal + " ");
-        break;
-      case 1:
-        System.out.print("15. \t| Local " + resultadoLocal + " ");
-        break;
-      case 2:
-        System.out.print("15. \t| Local " + resultadoLocal + " ");
-        break;
-      case 3:
-        System.out.print("15. \t| Local M " );
-        break;
-    
-      default:
-        break;
+        case 0:
+            System.out.print("15. \t| Local " + resultadoLocal);
+            break;
+        case 1:
+            System.out.print("15. \t| Local " + resultadoLocal);
+            break;
+        case 2:
+            System.out.print("15. \t| Local " + resultadoLocal);
+            break;
+        case 3:
+            System.out.print("15. \t| Local M" );
+            break;
+        default:
+            break;
     }
 
     switch (resultadoVisitante) {
-      case 0:
-        System.out.print("  Visitante " + resultadoVisitante);
-        break;
-      case 1:
-        System.out.print("  Visitante " + resultadoVisitante);
-        break;
-      case 2:
-        System.out.print("  Visitante " + resultadoVisitante);
-        break;
-      case 3:
-        System.out.print("  Visitante M" );
-        break;
-    
-      default:
-        break;
-  }
-  }
+        case 0:
+            System.out.print(" Visitante " + resultadoVisitante);
+            break;
+        case 1:
+            System.out.print(" Visitante " + resultadoVisitante);
+            break;
+        case 2:
+            System.out.print(" Visitante " + resultadoVisitante);
+            break;
+        case 3:
+            System.out.print(" Visitante M" );
+            break;
+        default:
+            break;
+    }
 
+    return resultado;
+}
+  
+  ////Método para crear el pleno al quince manual
+  public static int[] plenoAlQuinceManual() {
+    int resultadoLocal;
+    int resultadoVisitante;
+
+    do {
+        System.out.println("Introduce el resultado del partido a pleno: ");
+        System.out.println("0 para 0 goles, 1 para 1 gol, 2 para 2 goles y 3 para más de 2 goles");
+
+        System.out.print("Introduce el resultado del equipo local: ");
+        resultadoLocal = Integer.parseInt(System.console().readLine());
+    } while (resultadoLocal < 0 || resultadoLocal > 3);
+
+    do {
+        System.out.print("Introduce el resultado del equipo visitante: ");
+        resultadoVisitante = Integer.parseInt(System.console().readLine());
+    } while (resultadoVisitante < 0 || resultadoVisitante > 3);
+    if ((resultadoLocal >2) && (resultadoVisitante <2)) {
+      System.out.print("15. \t| Local M | Visitante " + resultadoVisitante);
+    } else if ((resultadoLocal >2) && (resultadoVisitante >2)){
+      System.out.print("15. \t| Local M | Visitante M");
+    } else if((resultadoLocal <2) && (resultadoVisitante >2)){
+      System.out.print("15. \t| Local " + resultadoLocal + " | Visitante M" );
+    } else{
+      System.out.print("15. \t| Local " + resultadoLocal + " | Visitante " + resultadoVisitante);
+    }
+    
+
+    // Crear y retornar el array con los resultados
+    int[] resultado = {resultadoLocal, resultadoVisitante};
+    return resultado;
+}
 
 
 
@@ -200,6 +182,7 @@ public class Quiniela {
     int seleccion;
     int[][] apuesta = null;
     int[][] partidosAcabados = creaQuinielaGanadora();
+    int[] resultado1 = null;
 
 
     System.out.println("Como desea realizar su apuesta :");
@@ -214,12 +197,14 @@ public class Quiniela {
             System.out.println("ESTA ES SU APUESTA");
             System.out.println("-----------------------");
             muestraApuesta(apuesta);
-            plenoAlQuinceAle();
+            resultado1 = plenoAlQuinceAle();
             break;
           case 2: 
+            System.out.println("ESTA ES SU APUESTA");
+            System.out.println("-----------------------");
             apuesta = creaQuinielaManual();
             muestraApuesta(apuesta);
-            plenoAlQuinceManual();
+            resultado1 = plenoAlQuinceManual();
             
             break;
         
@@ -234,10 +219,10 @@ public class Quiniela {
     System.out.println("ESTA ES LA APUESTA GANADORA DE LA SEMANA");
     System.out.println("------------------------------------------");
     muestraApuesta(partidosAcabados);
-    plenoAlQuinceAle();
+    int[] resultado2 = plenoAlQuinceAle();
     System.out.println();
 
-    comparaApuesta(apuesta, partidosAcabados);
+    comparaApuesta(apuesta, partidosAcabados, resultado1 , resultado2);
 
 
     System.out.println();
